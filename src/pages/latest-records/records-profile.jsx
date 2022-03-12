@@ -117,7 +117,6 @@ const ProfileRecords = ({ patientDetails, handleGetPatient }) => {
             </div>
             <ArrowForwardIosIcon className={classes.smallIcon} />
           </div>
-
           <AddPatientFormModal
             headings={{
               heading: t("patient.edit_patient"),

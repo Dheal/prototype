@@ -48,9 +48,10 @@ const LatestRecords = () => {
         <Grid container spacing={4}>
           <Grid item xs={3} style={{ paddingLeft: 105 }}>
             <Box sx={{ maxWidth: 340 }}>
-              <Card variant="outlined">
-                <Profile />
-              </Card>
+              <Profile
+                patientDetails={patientDetails}
+                handleGetPatient={handleGetPatient}
+              />
             </Box>
             <div style={{ marginTop: "30px", marginBottom: "30px" }}>
               <Box sx={{ maxWidth: 340 }}>

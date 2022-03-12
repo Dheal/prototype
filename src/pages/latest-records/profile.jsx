@@ -9,6 +9,7 @@ import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Chart from "./chart";
 import { getPatientsDetailsLatest } from "./helper";
+import { useTranslation } from "react-i18next";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -20,7 +21,23 @@ import { useSwitch } from "@mui/base/SwitchUnstyled";
 import clsx from "clsx";
 import Pagination from "@mui/material/Pagination";
 
-const Profile = () => {
+const Profile = ({ patientDetails, handleGetPatient }) => {
+  const location = useLocation();
+  const params = useParams();
+  const [editProfileOpen, setEditProfileOpen] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [next, setNext] = useState(false);
+  const { t } = useTranslation();
+
+  const genders = [
+    { gender_id: 1, gender: "Male" },
+    { gender_id: 2, gender: "Female" },
+    { gender_id: 3, gender: "Others" },
+  ];
+  const handleSuccess = async () => {
+    await handleGetPatient();
+    setSuccess(false);
+  };
   const blue = {
     500: "#007FFF",
   };
@@ -105,6 +122,8 @@ const Profile = () => {
       </BasicSwitchRoot>
     );
   }
+
+  console.log(patientDetails?.demographic);
   return (
     <>
       <React.Fragment>
@@ -176,12 +195,24 @@ const Profile = () => {
             }}
           >
             <div>
-              <b>Firstname Lastname</b>
+              <b>
+                {" "}
+                {`${patientDetails?.demographic?.first_name || ""} ${
+                  patientDetails?.demographic?.last_name || ""
+                }`}
+              </b>
             </div>
             <div style={{ fontSize: "1rem", marginTop: 20, marginLeft: "10%" }}>
               <Grid container spacing={2}>
                 <Grid item xm={9}>
-                  [DOB]xxxx [Gender] [Race]XX
+                  {patientDetails?.demographic?.birth_date}{" "}
+                  {`${patientDetails?.demographic?.age}, ${
+                    genders.find(
+                      (x) =>
+                        x.gender_id === patientDetails?.demographic?.gender_id
+                    )?.gender
+                  }`}{" "}
+                  {patientDetails?.demographic?.ethnic}
                 </Grid>
                 <Grid item xm={3}>
                   <img
@@ -223,7 +254,7 @@ const Profile = () => {
                   </Typography>
                 </Grid>
                 <Grid item xm={9}>
-                  [ID No]XXXX
+                  {patientDetails?.demographic?.contact_info.user_id}
                 </Grid>
               </Grid>
             </div>
@@ -259,11 +290,11 @@ const Profile = () => {
                   </Typography>
                 </Grid>
                 <Grid item xm={9}>
-                  [Mobile No]XXXX
+                  {patientDetails?.demographic?.mobile}
                 </Grid>
               </Grid>
             </div>
-            <div style={{ fontSize: "1rem", marginTop: 10, marginLeft: "22%" }}>
+            <div style={{ fontSize: "1rem", marginTop: 10, marginLeft: "25%" }}>
               <Grid container spacing={2}>
                 <Grid item xm={3}>
                   <Typography
@@ -295,7 +326,7 @@ const Profile = () => {
                   </Typography>
                 </Grid>
                 <Grid item xm={9}>
-                  [email]@XXXX.com
+                  {patientDetails?.demographic?.email_address}
                 </Grid>
               </Grid>
             </div>

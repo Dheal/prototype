@@ -60,6 +60,7 @@ const LatestTabs = ({ patientId }) => {
                   borderBottomRightRadius: 0,
                   borderTopLeftRadius: 10,
                   borderBottomLeftRadius: 10,
+                  backgroundColor: "#084D89",
                 }}
               >
                 <b>Biomark Reportted Report</b>
@@ -260,15 +261,15 @@ const LatestTabs = ({ patientId }) => {
               </Grid>
               <Grid item xs={7} style={{ textAlign: "end" }}>
                 <Button
-                  variant="outlined"
+                  variant="contained"
                   style={{
                     height: 30,
                     width: 20,
                     fontSize: 10,
                     color: "white",
-                    backgroundColor: "blue",
                     marginTop: 5,
                     padding: 0,
+                    backgroundColor: "#084D89",
                   }}
                 >
                   <b>Yes</b>

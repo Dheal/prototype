@@ -59,7 +59,12 @@ const Card2 = () => {
           </Button>
           <Button
             variant="contained"
-            style={{ borderRadius: 0, height: 30, width: "50%" }}
+            style={{
+              borderRadius: 0,
+              height: 30,
+              width: "50%",
+              backgroundColor: "#084D89",
+            }}
           >
             <h6>
               <b>All Reports</b>
