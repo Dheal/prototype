@@ -202,7 +202,7 @@ const Profile = ({ patientDetails, handleGetPatient }) => {
                 }`}
               </b>
             </div>
-            <div style={{ fontSize: "1rem", marginTop: 20, marginLeft: "10%" }}>
+            <div style={{ fontSize: "0.75rem", marginTop: 20, marginLeft: 0 }}>
               <Grid container spacing={2}>
                 <Grid item xm={9}>
                   {patientDetails?.demographic?.birth_date}{" "}
@@ -336,7 +336,7 @@ const Profile = ({ patientDetails, handleGetPatient }) => {
                 borderColor: "grey",
                 borderRadius: 5,
                 height: 30,
-                width: "50%",
+                width: "60%",
                 color: "black",
                 marginTop: 10,
               }}
@@ -345,7 +345,7 @@ const Profile = ({ patientDetails, handleGetPatient }) => {
                 <b>Edit Profile</b>
               </h5>
             </Button>
-            <div style={{ fontSize: 16, marginTop: 15, marginLeft: 80 }}>
+            <div style={{ fontSize: 16, marginTop: 15, marginLeft: 50 }}>
               <Grid container spacing={2}>
                 <Grid item xm={9} style={{ color: "grey" }}>
                   Profile Active

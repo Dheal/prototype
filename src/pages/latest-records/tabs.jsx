@@ -46,14 +46,67 @@ const LatestTabs = ({ patientId }) => {
       <div className={`${classes.tabsContainer} ${classes.tabsC}`}>
         <div className={`${classes.tabs} ${classes.tabsContainer1}`}>
           <Grid container spacing={2}>
+            <Grid item xm={3}>
+              <Button
+                variant="contained"
+                style={{
+                  borderColor: "grey",
+                  // borderRadius: 0,
+                  height: 30,
+                  width: 100,
+                  color: "white",
+                  fontSize: 10,
+
+                  backgroundColor: "#084D89",
+                }}
+              >
+                <b style={{ fontSize: 12 }}>Reports</b>
+              </Button>
+              <Button
+                variant="contained"
+                style={{
+                  borderColor: "grey",
+                  // borderRadius: 0,
+                  height: 30,
+                  width: 100,
+                  color: "black",
+                  fontSize: 10,
+                  marginLeft: 10,
+                  backgroundColor: "white",
+                }}
+              >
+                <b style={{ fontSize: 12 }}>Trends</b>
+              </Button>
+              <Button
+                variant="contained"
+                style={{
+                  borderColor: "grey",
+                  // borderRadius: 0,
+                  height: 30,
+                  width: 100,
+                  color: "black",
+                  fontSize: 10,
+                  marginLeft: 10,
+                  backgroundColor: "white",
+                }}
+              >
+                <b style={{ fontSize: 12 }}>Summary</b>
+              </Button>
+            </Grid>
+          </Grid>
+        </div>
+      </div>
+      <div className={`${classes.tabsContainer} ${classes.tabsC}`}>
+        <div className={`${classes.tabs} ${classes.tabsContainer1}`}>
+          <Grid container spacing={2} style={{ marginTop: 10 }}>
             <Grid item xs={5}>
               <Button
                 variant="contained"
                 style={{
                   borderColor: "grey",
                   // borderRadius: 0,
-                  height: 40,
-                  width: 200,
+                  height: 30,
+                  width: 150,
                   color: "white",
                   fontSize: 10,
                   borderTopRightRadius: 0,
@@ -63,13 +116,13 @@ const LatestTabs = ({ patientId }) => {
                   backgroundColor: "#084D89",
                 }}
               >
-                <b>Biomark Reportted Report</b>
+                <b style={{ fontSize: 7 }}>Biomark Reportted Report</b>
               </Button>
               <Button
                 variant="outlined"
                 style={{
-                  height: 40,
-                  width: 200,
+                  height: 30,
+                  width: 150,
                   fontSize: 10,
                   borderTopLeftRadius: 0,
                   borderBottomLeftRadius: 0,
@@ -78,7 +131,7 @@ const LatestTabs = ({ patientId }) => {
                   color: "black",
                 }}
               >
-                <b>Lab Reportted Report</b>
+                <b style={{ fontSize: 7 }}>Lab Reportted Report</b>
               </Button>
               <Button
                 variant="outlined"
@@ -126,7 +179,7 @@ const LatestTabs = ({ patientId }) => {
                     <img
                       src="https://cdn1.iconfinder.com/data/icons/pointed-edge-web-navigation/115/refresh-grey-512.png"
                       style={{
-                        width: 30,
+                        width: 20,
                         borderRadius: "50%",
                         paddingTop: 0,
                         marginTop: 10,
@@ -136,7 +189,7 @@ const LatestTabs = ({ patientId }) => {
                     <img
                       src="https://www.lter-europe.net/projects/PPP/get_app_grey_192x192.png/image"
                       style={{
-                        width: 30,
+                        width: 20,
                         borderRadius: "50%",
                         paddingTop: 0,
                         marginTop: 10,
@@ -146,7 +199,7 @@ const LatestTabs = ({ patientId }) => {
                     <img
                       src="https://www.pngkit.com/png/detail/51-512913_image-result-for-messaging-icon-find-image-messages.png"
                       style={{
-                        width: 30,
+                        width: 20,
                         // borderRadius: "50%",
                         paddingTop: 0,
                         marginTop: 10,
@@ -156,7 +209,7 @@ const LatestTabs = ({ patientId }) => {
                     <img
                       src="https://icones.pro/wp-content/uploads/2022/02/icone-de-cloche-grise.png"
                       style={{
-                        width: 30,
+                        width: 20,
                         borderRadius: "50%",
                         paddingTop: 0,
                         marginTop: 10,
@@ -164,7 +217,11 @@ const LatestTabs = ({ patientId }) => {
                       }}
                     />
                   </Grid>
-                  <Grid item xs={4} style={{ paddingLeft: 0, marginTop: 10 }}>
+                  <Grid
+                    item
+                    xs={4}
+                    style={{ paddingLeft: 0, marginTop: 10, marginLeft: 20 }}
+                  >
                     <Button
                       variant="outlined"
                       style={{
@@ -175,7 +232,7 @@ const LatestTabs = ({ patientId }) => {
                         backgroundColor: "#DDE1EB",
                       }}
                     >
-                      <b>Mark as Reviewed</b>
+                      <b style={{ fontSize: 7 }}>Mark as Reviewed</b>
                     </Button>
                   </Grid>
                 </Grid>

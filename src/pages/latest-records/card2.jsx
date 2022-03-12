@@ -266,10 +266,10 @@ const Card2 = () => {
           <Typography variant="body2">
             <Pagination
               color="primary"
-              count={4}
+              count={3}
               showFirstButton
               showLastButton
-              //   size="small"
+              size="small"
               variant="outlined"
               shape="rounded"
             />
